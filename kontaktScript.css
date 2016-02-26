@@ -1,0 +1,78 @@
+body {
+    margin:0;
+    padding:0;
+    height:200%;
+    background-color: #ff1493;
+}
+div {
+    background: #ff14ff;
+    border-radius: 6px;
+    color: #fff;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+    padding: 24px 15px;
+    text-align: center;
+}
+header,
+section,
+aside,
+footer {
+    margin: 0 1.5% 24px 1.5%;
+}
+section {
+    float: right;
+    width: 63%;
+}
+aside {
+    float: left;
+    width: 30%;
+}
+footer {
+    clear: both;
+    margin-bottom: 0;
+}
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffa5ff;
+}
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+nav.navigation {
+    position: absolute;
+    top: 18%;
+    width: 97%;
+    left: 1.5%;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: ltr;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: inherit;
+}
