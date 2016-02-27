@@ -2,10 +2,10 @@ body {
     margin:0;
     padding:0;
     height:200%;
-    background-color: #ff1493;
+    background-color: #E7DCE8 url("background.jpg");
 }
 div {
-    background: #ff14ff;
+    background: #FAE5E5 url("green_leaves_PNG3675.png");
     border-radius: 6px;
     color: #fff;
     display: block;

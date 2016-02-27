@@ -35,8 +35,14 @@ footer {
     padding:10px;
     margin: 0 1.5% 10px 1%;
 }
-
-
+#see{
+    float: left;
+}
+#info2{
+    position: absolute;
+    left: 28%;
+    top: 35%;
+}
 footer {
     clear: both;
     margin-bottom: 0;

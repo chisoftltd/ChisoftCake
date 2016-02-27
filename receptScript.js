@@ -1,6 +1,9 @@
 /**
  * Created by Chisoft on 2016-02-24.
  */
+/*jslint browser: true*/
+/*global $, jQuery, alert*/
+
 var yeast1 = 0.0;
 var water1 = 0.0;
 var sugar1 = 0.0;
@@ -82,3 +85,61 @@ rangeSlider('range-slider-1', function(value) {
     document.getElementById("euButter2").innerHTML = 6 * value;
     document.getElementById("euButter3").innerHTML = 6 * value;
 });
+
+var children;
+var current;
+
+$.fn.start = function (rating, cb) {
+    "use strict";
+    var length = $(this).children().length;
+    children = $(this).children();
+    //current index ,0 base
+    current = -1;
+
+
+    if (typeof (rating) === 'function') {
+        cb = rating;
+    } else {
+        if (rating < 1 || rating > length) {
+            rating = -1;
+        }
+    }
+    //init rating
+    current = rating - 1;
+    for (var j = 0; j <= current; j++) {
+        $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
+    }
+    for (var i = 0; i < length; i++) {
+
+        $(children[i]).bind('mouseover', function (event) {
+            current = $(this).index(children[i]);
+
+            for (var j = 0; j <= current; j++) {
+                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
+            }
+            for (var j = current + 1; j < length; j++) {
+                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-nomal');
+            }
+
+            if (typeof(cb) === 'function') {
+
+                cb(current + 1);
+            }
+        });
+    }
+}
+
+$.fn.getCurrentRating = function () {
+    var length = $(this).children().length;
+    var children = $(this).children();
+    var resulut = 0;
+
+    for (var i = 0; i < length; i++) {
+        if ($(children[i]).hasClass('jr-rating')) {
+            resulut += 1;
+        } else {
+            break;
+        }
+    }
+    return resulut;
+}
