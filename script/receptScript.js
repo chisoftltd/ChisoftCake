@@ -168,13 +168,13 @@ $('.ratingForm label').hover(function () {
         var value = ($('input[name=rating]:hover', '.ratingForm').val());
         var i = 0;
         while (i <= value) {
-            $('label[for=star' + i + ']').css('backgroundImage', "url('img/star_pink.png')");
+            $('label[for=star' + i + ']').css('backgroundImage', "url('../img/star_pink.png')");
             i++;
         }
     }
 }, function () {
     if (!isRated) {
-        $('.ratingForm label').css('backgroundImage', "url('img/star_grey.png')");
+        $('.ratingForm label').css('backgroundImage', "url('../img/star_grey.png')");
     }
 });
 
