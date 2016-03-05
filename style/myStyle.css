@@ -195,7 +195,6 @@ header {
 }
 
 aside,
-section,
 footer {
     margin: 0 1.5% 24px 1.5%;
 }
@@ -203,6 +202,7 @@ footer {
 section {
     float: right;
     width: 41%;
+    margin: 0 1% 24px 1%;
 }
 
 aside {
