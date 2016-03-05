@@ -113,8 +113,8 @@ $(".ratingForm input").click(function () {
 $('.ratingForm input').click(function () {
 
     if (!isRated) {
-        $('#votes').html('<img src="img/loader.gif">');
-        $('#average').html('<img src="img/loader.gif">');
+        $('#votes').html('<img src="../img/loader.gif">');
+        $('#average').html('<img src="../img/loader.gif">');
         console.log($(this).attr("id"));
 
         $.ajax({

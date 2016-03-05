@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style/kontaktScript.css">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title>PLUSDONE (CHISOFT) BAKERY KONTAKT</title>
+</head>
+<body>
+<header>
+    <div id="header1">
+        <a href="../index.html"><img style="position: absolute; margin: 0% 5px 5px 0px; top: 3%; left: 3%;"
+                                     src="../img/plusdone.jpg" alt="company logo"/>
+        </a>
+
+        <h1><strong style="color: #000;">PLUSDONE (CHISOFT) BAKERY KONTAKT</strong></h1>
+    </div>
+    <form style="right: 5%; position:absolute; top: 11%;">
+        Search Google:
+        <input type="search" name="googlesearch">
+        <input type="Submit">
+    </form>
+    <div>
+        <nav class="navigation">
+            <ul>
+                <li><a class="active" href="../index.html">Home</a></li>
+                <li><a href="recept.html">Recept</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="about.html">Om Oss</a></li>
+                <!-- <li style="float:right;list-style-type:none;">
+                    <a href="login.html">Logga in</a></li>
+                <li style="float:right;list-style-type:none;">
+                    <a href="register.html">Register</a></li> -->
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section>
+
+        <form class="contactForm" action="/" method="post" style="position: fixed; top: 30%;left: 35%">
+            <h2 style="position: relative; left: -10%;">Kontakta PLUSDONE (CHISOFT) BAKERY AB</h2>
+            <label>
+                <input id="name" style="margin-right:10px; width:250px;" type="text" tabindex="1" required autofocus>
+                <br/>
+                <span>Namn</span><br/>
+            </label>
+            <label>
+                <input id="email" style="margin-right:10px; width:250px;" type="email" tabindex="2" required>
+                <br/>
+                <span>Email</span><br/>
+            </label>
+            <label>
+                <textarea id="msg" style="margin-right:10px; width:250px; height: 100px;" tabindex="10" required></textarea>
+                <br/>
+                <span>Meddelande</span><br/>
+
+            </label>
+            <br>
+            <a href="#Thank" id="sub">
+                <button name="submit" type="submit" id="contact-submit">Skicka</button>
+            </a>
+
+                <p style="color: #000;"><strong>Thank you for contacting us! We will reply you 24 hours</strong></p>
+
+        </form>
+
+    <aside>
+        <h2></h2>
+
+        <div>
+            <nav class="side-nav">
+                <a href="../index.html" class="side-nav-button">Home</a>
+                <a href="recept.html" class="side-nav-button active">Recept</a>
+                <a href="kontakt.html" class="side-nav-button">Kontakt</a>
+                <a href="about.html" class="side-nav-button">Om Oss</a>
+            </nav>
+        </div>
+    </aside>
+</section>
+<footer>
+    <div>
+        <address style="color: black">
+            <strong>Written by <br>
+                <a href="mailto:chinwe@kth.se">Benjamin Chinwe</a>.<br>
+                Visit us at:<br>
+                benjaminchinwe.weebly.com<br>
+                Box 564, Stockholm<br>
+                Sweden
+            </strong>
+        </address>
+    </div>
+</footer>
+<script src="../script/receptScript.js"></script>
+</body>
+</html>
