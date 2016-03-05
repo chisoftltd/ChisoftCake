@@ -35,14 +35,7 @@ footer {
     padding:10px;
     margin: 0 1.5% 10px 1%;
 }
-#see{
-    float: left;
-}
-#info2{
-    position: absolute;
-    left: 28%;
-    top: 35%;
-}
+
 footer {
     clear: both;
     margin-bottom: 0;
@@ -53,7 +46,7 @@ nav {
 }
 
 p {
-    font-family: "Garamond";
+    font-family:"SansSerif";
     font-size: 25px;
     font-weight: 300;
     text-align: left;
@@ -244,37 +237,32 @@ nav.navigation {
 /* Test result */
 .test-result {
     position:absolute;
-    top:78%;
-    right:54%;
+    top:90%;
+    right:55%;
     line-height:1;
 }
 
-.rating {
-    overflow: hidden;
-    display: inline-block;
-    font-size: 0;
-    position: relative;
-}
-.rating-input {
-    float: right;
-    width: 26px;
-    height: 26px;
-    padding: 0;
-    margin: 0 0 0 -16px;
-    opacity: 0;
-}
-.rating:hover .rating-star:hover,
-.rating:hover .rating-star:hover ~ .rating-star,
-.rating-input:checked ~ .rating-star {
-    background-position: 0 0;
-}
-.rating-star,
-.rating:hover .rating-star {
-    position: relative;
-    float: right;
-    display: block;
-    width: 16px;
-    height: 16px;
-    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
-}
 
+.ratingForm {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.stars {
+    display: none;
+}
+input[type=radio] + label {
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(img/star_grey.png) left center no-repeat;
+}
+.ratingForm img {
+    width: 30px;
+    height: 30px;
+}
+.ratingForm span {
+    color: pink;
+    margin-left: 10px;
+}

@@ -16,6 +16,12 @@ var euButter1 = 0.0;
 var butter1 = 0.0;
 var milk1 = 0.0;
 
+var myPoint = 0;
+var isRated = false;
+
+$('#votes').text(getLocalStorage("key2"));
+$('#average').text(getLocalStorage("key3"));
+
 function rangeSlider(id, onDrag) {
 
 
@@ -86,60 +92,124 @@ rangeSlider('range-slider-1', function(value) {
     document.getElementById("euButter3").innerHTML = 6 * value;
 });
 
-var children;
-var current;
 
-$.fn.start = function (rating, cb) {
-    "use strict";
-    var length = $(this).children().length;
-    children = $(this).children();
-    //current index ,0 base
-    current = -1;
+var myUrl = "";
 
-
-    if (typeof (rating) === 'function') {
-        cb = rating;
-    } else {
-        if (rating < 1 || rating > length) {
-            rating = -1;
-        }
+$(".ratingForm input").click(function () {
+    var id = this.id;
+    var apiKey = "";
+    var bakegoods = "";
+    if (id == "tigercakeForm") {
+        apiKey = "80f4dcc92ab360d3";
+        bakegoods = "tigercake";
+        console.log("this is tiger cake");
     }
-    //init rating
-    current = rating - 1;
-    for (var j = 0; j <= current; j++) {
-        $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
-    }
-    for (var i = 0; i < length; i++) {
 
-        $(children[i]).bind('mouseover', function (event) {
-            current = $(this).index(children[i]);
+    myUrl = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=" + apiKey + "&recipe=" + bakegoods;
+});
 
-            for (var j = 0; j <= current; j++) {
-                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-rating');
-            }
-            for (var j = current + 1; j < length; j++) {
-                $(children[j]).removeClass('jr-nomal jr-rating').addClass('jr-nomal');
-            }
 
-            if (typeof(cb) === 'function') {
+// fetch rating result
+$('.ratingForm input').click(function () {
 
-                cb(current + 1);
+    if (!isRated) {
+        $('#votes').html('<img src="img/loader.gif">');
+        $('#average').html('<img src="img/loader.gif">');
+        console.log($(this).attr("id"));
+
+
+        $.ajax({
+            method: "GET",
+//			url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=" + apiKey + "&recipe=" + bakegoods,
+            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake",
+//			url = myUrl;
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                $('#votes').text(data.votes);
+                $('#average').text(data.rating.toFixed(1));
+                setLocalStorage("key2", data.votes);
+                setLocalStorage("key3", data.rating.toFixed(1));
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
             }
         });
     }
-}
+});
 
-$.fn.getCurrentRating = function () {
-    var length = $(this).children().length;
-    var children = $(this).children();
-    var resulut = 0;
+// rate
+$('.ratingForm input').click(function () {
+    if (!isRated) {
+        myPoint = ($('input[name=rating]:checked', '.ratingForm').val());
+        $(this).next().slideUp();
+        $(this).next().slideDown();
+        console.log("this element: " + this);
 
-    for (var i = 0; i < length; i++) {
-        if ($(children[i]).hasClass('jr-rating')) {
-            resulut += 1;
-        } else {
-            break;
+        // kate
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=0f69fc1a7bf82398&recipe=varmlandstarta
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=0f69fc1a7bf82398&recipe=varmlandstarta&rating=
+
+        // cronut
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=939da50dc8380768&recipe=cronut
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=939da50dc8380768&recipe=cronut&rating=
+
+        // scones
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=adcd44aec6944dff&recipe=scones
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=adcd44aec6944dff&recipe=scones&rating=4
+
+        // tiger cake
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake
+        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake&rating=
+
+        $.ajax({
+            method: "GET",
+//			url: myUrl + "&rating=" + myPoint,
+//			url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=ade853a9ad825ff1&recipe=creme_brulee&rating=" + myPoint,
+            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake&rating=" + myPoint,
+            success: function (data) {
+                console.log(JSON.stringify(data));
+                console.log("status: " + data.status);
+                $('#myRating').text(myPoint);
+                $(':radio:not(:checked)').attr('disabled', true);
+                isRated = true;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+    }
+});
+
+$('.ratingForm label').hover(function () {
+    if (!isRated) {
+        var value = ($('input[name=rating]:hover', '.ratingForm').val());
+        var i = 0;
+        while (i <= value) {
+            $('label[for=star' + i + ']').css('backgroundImage', "url('img/star_pink.png')");
+            i++;
         }
     }
-    return resulut;
+}, function () {
+    if (!isRated) {
+        $('.ratingForm label').css('backgroundImage', "url('img/star_grey.png')");
+    }
+});
+
+
+function getLocalStorage(key) {
+    if (typeof(window.localStorage) != 'undefined') {
+        portions = window.localStorage.getItem(key);
+    } else {
+        throw "window.localStorage, not defined";
+    }
+    return portions;
+}
+
+function setLocalStorage(key, value) {
+    if (typeof(window.localStorage) != 'undefined') {
+        window.localStorage.setItem(key, value);
+    }
+    else {
+        throw "window.localStorage, not defined";
+    }
 }
