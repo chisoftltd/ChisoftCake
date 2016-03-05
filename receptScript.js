@@ -35,7 +35,7 @@ function rangeSlider(id, onDrag) {
     dragger.style.left = -draggerWidth + 'px';
     dragger.style.marginLeft = (draggerWidth / 2) + 'px';
 
-    range.addEventListener("mousedown", function(e) {
+    range.addEventListener("mousedown", function (e) {
         rangeWidth = this.offsetWidth;
         rangeLeft = this.offsetLeft;
         down = true;
@@ -43,11 +43,11 @@ function rangeSlider(id, onDrag) {
         return false;
     });
 
-    document.addEventListener("mousemove", function(e) {
+    document.addEventListener("mousemove", function (e) {
         updateDragger(e);
     });
 
-    document.addEventListener("mouseup", function() {
+    document.addEventListener("mouseup", function () {
         down = false;
     });
 
@@ -63,7 +63,7 @@ function rangeSlider(id, onDrag) {
 
 // Run!
 
-rangeSlider('range-slider-1', function(value) {
+rangeSlider('range-slider-1', function (value) {
     if (value == 0) value = 1;
     document.getElementById('test-result').innerHTML = value + 'guest';
     document.getElementById("yeast").innerHTML = 0.25 * value;
@@ -99,10 +99,10 @@ $(".ratingForm input").click(function () {
     var id = this.id;
     var apiKey = "";
     var bakegoods = "";
-    if (id == "tigercakeForm") {
-        apiKey = "80f4dcc92ab360d3";
-        bakegoods = "tigercake";
-        console.log("this is tiger cake");
+    if (id == "cronutForm") {
+        apiKey = "cb760a3c289a1873";
+        bakegoods = "cronut";
+        console.log("this is cronut cake");
     }
 
     myUrl = "https://edu.oscarb.se/sjk15/api/recipe/?api_key=" + apiKey + "&recipe=" + bakegoods;
@@ -117,12 +117,10 @@ $('.ratingForm input').click(function () {
         $('#average').html('<img src="img/loader.gif">');
         console.log($(this).attr("id"));
 
-
         $.ajax({
             method: "GET",
 //			url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=" + apiKey + "&recipe=" + bakegoods,
-            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake",
-//			url = myUrl;
+            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=cb760a3c289a1873&recipe=cronut",
             success: function (data) {
                 console.log(JSON.stringify(data));
                 $('#votes').text(data.votes);
@@ -135,6 +133,9 @@ $('.ratingForm input').click(function () {
             }
         });
     }
+    setTimeout(function () {
+        location.reload()
+    }, 1000);
 });
 
 // rate
@@ -145,27 +146,9 @@ $('.ratingForm input').click(function () {
         $(this).next().slideDown();
         console.log("this element: " + this);
 
-        // kate
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=0f69fc1a7bf82398&recipe=varmlandstarta
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=0f69fc1a7bf82398&recipe=varmlandstarta&rating=
-
-        // cronut
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=939da50dc8380768&recipe=cronut
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=939da50dc8380768&recipe=cronut&rating=
-
-        // scones
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=adcd44aec6944dff&recipe=scones
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=adcd44aec6944dff&recipe=scones&rating=4
-
-        // tiger cake
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake
-        // https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake&rating=
-
         $.ajax({
             method: "GET",
-//			url: myUrl + "&rating=" + myPoint,
-//			url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=ade853a9ad825ff1&recipe=creme_brulee&rating=" + myPoint,
-            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=80f4dcc92ab360d3&recipe=tigercake&rating=" + myPoint,
+            url: "https://edu.oscarb.se/sjk15/api/recipe/?api_key=cb760a3c289a1873&recipe=cronut&rating=" + myPoint,
             success: function (data) {
                 console.log(JSON.stringify(data));
                 console.log("status: " + data.status);

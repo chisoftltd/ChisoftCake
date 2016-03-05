@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="receptStyle.css">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="jquery-2.1.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>PREPARATION OF CRONUT</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
       <img style="position: absolute; top: 30%; right:2%; float: right; margin: 0px 10px 10px 0px;"
            src="Cronut.jpg" alt="cronut image" width="400" height="300">
       <p>Rate CRONUT</p>
-    <form class="ratingForm">
+    <form class="ratingForm" id="cronutForm">
         <input class="stars" type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Meh!"></label>
         <input class="stars" type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda ok"></label>
         <input class="stars" type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Yeah sure"></label>
