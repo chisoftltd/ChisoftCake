@@ -10,7 +10,7 @@ div {
     border-radius: 6px;
     color: black;
     display: block;
-    font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Comic Sans MS", Terminal, "Lucida Console", Courier;
     padding: 24px 15px;
     text-align: center;
 }
@@ -18,8 +18,8 @@ div {
 div.du{
     margin: 0;
     padding: 0;
-    font-family: "Garamond";
-    font-size: 25px;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
     text-align: left;
     background: transparent;
 
@@ -42,9 +42,8 @@ nav {
 }
 
 p {
-    font-family:"SansSerif";
-    font-size: 25px;
-    font-weight: 300;
+    font-family:"Comic Sans MS";
+    font-size: 16px;
     text-align: left;
     color: black;
 }
@@ -191,16 +190,6 @@ nav.navigation {
     background-color: #4CAF50;
 }
 
-.rating {
-    unicode-bidi: bidi-override;
-    direction: ltr;
-}
-
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-    content: "\2605";
-    position: inherit;
-}
 
 .range-slider {
     width:300px;
@@ -243,7 +232,7 @@ nav.navigation {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 .stars {
     display: none;

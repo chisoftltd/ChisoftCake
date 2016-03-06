@@ -22,8 +22,9 @@ var isRated = false;
 $('#votes').text(getLocalStorage("key2"));
 $('#average').text(getLocalStorage("key3"));
 
-function rangeSlider(id, onDrag) {
 
+function rangeSlider(id, onDrag) {
+    "use strict";
 
     var range = document.getElementById("range-slider-1"),
         dragger = range.children[0],
@@ -196,3 +197,4 @@ function setLocalStorage(key, value) {
         throw "window.localStorage, not defined";
     }
 }
+

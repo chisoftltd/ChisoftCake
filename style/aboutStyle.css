@@ -11,7 +11,7 @@ div {
     border-radius: 6px;
     color: black;
     display: block;
-    font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Comic Sans MS", Terminal, "Lucida Console", Courier;
     padding: 24px 15px;
     text-align: center;
 }
@@ -19,12 +19,13 @@ div {
 section,
 aside,
 footer {
-    margin: 0 1.5% 24px 1.5%;
+    margin: 0 1.5% 34px 1.5%;
 }
 
 section {
     float: right;
     width: 80%;
+    height:50vh;
 }
 
 aside {
@@ -42,9 +43,8 @@ nav {
 }
 
 p {
-    font-family:"Garamond";
-    font-size: 25px;
-    font-weight: 300;
+    font-family:"Comic Sans MS";
+    font-size: 16px;
     text-align: left;
     color: black;
 }
