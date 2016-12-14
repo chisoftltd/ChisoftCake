@@ -1,67 +1,44 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: #E7DCE8 url("background.jpg");
+    margin:0;
+    padding:0;
+    background: #E7DCE8 url("../img/background.jpg");
 }
-
 div {
-    background: #FAE5E5 url("green_leaves_PNG3675.png");
+    background: #FAE5E5 url("../img/green_leaves_PNG3675.png");
     background-size: cover;
     border-radius: 6px;
-    color: black;
+    color: #fff;
     display: block;
     font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
     padding: 24px 15px;
     text-align: center;
 }
-
-section,
-aside,
+header,
 footer {
     margin: 0 1.5% 24px 1.5%;
 }
-
 section {
     float: right;
-    width: 80%;
-}
-
-aside {
-    float: left;
-    width: 185px;
+    width: 83%;
+    padding:20px;
+    margin: 0 1.5% 330px 1.5%;
 }
 
 footer {
     clear: both;
-    margin-bottom: 0;
-}
-
-nav {
-    display: block;
-}
-
-p {
-    font-family:"Garamond";
-    font-size: 25px;
-    font-weight: 300;
-    text-align: left;
-    color: black;
-}
-header {
-    margin: 0 1.5% 15px 1.5%;
+    margin: 0 1.5% 24px 1.5%;
 }
 .side-nav {
     width: 185px;
     margin: 5px auto;
     padding: 0px;
-    background: #FAE5E5 url("green_leaves_PNG3675.png");
+    background: #FAE5E5 url("../img/green_leaves_PNG3675.png");
     border-radius: 5px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.5);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.5);
     float: left;
     position: absolute;
-    top: 26%;
+    top: 28%;
     left: 1.5%;
 }
 
@@ -146,13 +123,12 @@ header {
 }
 
 ul {
-    list-style-type: none;
+    list-style-type:none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #ffa5ff;
 }
-
 li {
     float: left;
     border-right: 1px solid #bbb;

@@ -1,61 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="receptStyle.css">
+    <link rel="stylesheet" href="../style/receptStyle.css">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <script type="text/javascript" src="../jquery-2.1.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <title>PREPARATION OF CRONUT</title>
 </head>
 <body>
 <header>
     <div id="header1">
-        <a href="index.html"><img style="position: absolute; margin: 0% 5px 5px 0px; top: 3%; left: 3%;"
-                                  src="plusdone.jpg" alt="company logo"/>
+        <a href="../index.html"><img style="position: absolute; margin: 0% 5px 5px 0px; top: 3%; left: 3%;"
+                                     src="../img/plusdone.jpg" alt="company logo"/>
         </a>
 
         <h1><strong style="color: #000;">PREPARATION OF CRONUT</strong></h1>
     </div>
+
+    <form style="right: 5%; position:absolute; top: 5%;">
+        Search Google:
+        <input type="search" name="googlesearch">
+        <input type="Submit">
+    </form>
+
     <div>
         <nav class="navigation">
             <ul>
-                <li><a class="active" href="index.html">Home</a></li>
+                <li><a class="active" href="../index.html">Home</a></li>
                 <li><a href="recept.html">Recept</a></li>
-                <li><a href="kontact.html">Kontact</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
                 <li><a href="about.html">Om Oss</a></li>
                 <li style="float:right;list-style-type:none;">
-                    <a href="login.html">Logga in</a></li>
+                    <a target="_blank" title="find us on Facebook"
+                       href="http://www.facebook.com/benjamin.uchenna"><img
+                            alt="find us on facebook" src="../img/facebook-c_130x50.png"
+                            style="position: absolute; right: 0; top: 6%"
+                            border=0></a></li>
                 <li style="float:right;list-style-type:none;">
-                    <a href="register.html">Register</a></li>
+                    <a target="_blank" title="follow me on twitter" href="http://www.twitter.com/search?q=%23CRONUT"><img
+                            alt="follow me on twitter" src="../img/twitter-b_40x40.png" style="position: absolute; right: 3.5%; top: 6%"
+                            border=0></a></li>
             </ul>
         </nav>
     </div>
 </header>
 
 <div id="section">
+  <figure>
+      <img style="position: absolute; top: 30%; right:2%; float: right; margin: 0px 10px 10px 0px;"
+           src="../img/Cronut.jpg" alt="cronut image" width="400" height="300">
+      <p>Rate CRONUT</p>
+    <form class="ratingForm" id="cronutForm">
+        <input class="stars" type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Meh!"></label>
+        <input class="stars" type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda ok"></label>
+        <input class="stars" type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Yeah sure"></label>
+        <input class="stars" type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good"></label>
+        <input class="stars" type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Cronut rocks!"></label>
+    </form>
+    <p class="ratingForm">My rating: <span id="myRating"></span></p>
+    <p class="ratingForm">Votes: <span id="votes"></span></p>
+    <p class="ratingForm">Average: <span id="average"></span></p>
+</figure>
 
-    <img style="position: absolute; top: 30%; right:2%; float: right; margin: 0px 10px 10px 0px;"
-         src="Cronut.jpg" alt="cronut image" width="350" height="250">
-
-    <p>CRONUT</p>
-
-    <p>
-           <span class="rating">
-        <input type="radio" class="rating-input"
-               id="rating-input-1-5" name="rating-input-1"/>
-        <label for="rating-input-1-5" class="rating-star"></label>
-        <input type="radio" class="rating-input"
-               id="rating-input-1-4" name="rating-input-1"/>
-        <label for="rating-input-1-4" class="rating-star"></label>
-        <input type="radio" class="rating-input"
-               id="rating-input-1-3" name="rating-input-1"/>
-        <label for="rating-input-1-3" class="rating-star"></label>
-        <input type="radio" class="rating-input"
-               id="rating-input-1-2" name="rating-input-1"/>
-        <label for="rating-input-1-2" class="rating-star"></label>
-        <input type="radio" class="rating-input"
-               id="rating-input-1-1" name="rating-input-1"/>
-        <label for="rating-input-1-1" class="rating-star"></label>
-</span>
-    </p>
 
     <p><strong>Picture by: <a href="http://ccfoodtravel.com/">
         CCFoodTravel.com</a></strong></p>
@@ -64,16 +70,15 @@
         Cronuts are the donuts that make people go nuts! They have <br>
         the shape and flavor of a doughnut, yet feature the crispy, <br>
         flaky texture of a buttery croissant. </p>
-    <script type="receptScript.js"></script>
     <div class="du">
-        <h2>Ingrediens</h2>
+        <h2>Ingrediens (slide red box)</h2>
 
         <form class="range-slider" id="range-slider-1">
             <span></span>
         </form>
         <form class="test-result" id="test-result">1 guest</form>
         <p>
-        <br>
+            <br>
         <ul class="u">
             <li><strong id="yeast">0.25 </strong> ounce package active dry yeast</li>
             <li><strong id="water">0.5</strong> cup warm water</li>
@@ -89,17 +94,22 @@
                 divided
             </li>
         </ul>
-        </p>
+
         <h2>Directions</h2>
         <ol type="1">
             <li>
-                <p>Place <strong id="yeast2">0.25 </strong> ounce yeast into the mixing bowl of a large stand mixer. Whisk in
-                    <strong id="water2">0.5</strong> cup warm water and let stand until a creamy foam forms on top, about 5 minutes.
-                    Add <strong id="salt2">0.5</strong> teaspoon salt, <strong id="sugar2">2.5</strong> tablespoons sugar,
+                <p>Place <strong id="yeast2">0.25 </strong> ounce yeast into the mixing bowl of a large stand mixer.
+                    Whisk in
+                    <strong id="water2">0.5</strong> cup warm water and let stand until a creamy foam forms on top,
+                    about 5 minutes.
+                    Add <strong id="salt2">0.5</strong> teaspoon salt, <strong id="sugar2">2.5</strong> tablespoons
+                    sugar,
                     <strong id="milk2">0.5</strong> cup milk, <strong id="butter2">2</strong> tablespoons melted butter,
-                    <strong id="vanilla2">1</strong> teaspoon vanilla extract, <strong id="egg2">1</strong> large egg, and
+                    <strong id="vanilla2">1</strong> teaspoon vanilla extract, <strong id="egg2">1</strong> large egg,
+                    and
                     <strong id="nutmeg2">0.125</strong> teaspoon nutmeg. Whisk mixture thoroughly.
-                    Pour <strong id="flour2">1</strong> pound flour on top of liquid ingredients. Place mixing bowl onto mixer.</p>
+                    Pour <strong id="flour2">1</strong> pound flour on top of liquid ingredients. Place mixing bowl onto
+                    mixer.</p>
             </li>
             <li>
                 <p>Attach dough hook to mixer and knead on low speed until dough comes together in a ball and becomes
@@ -113,8 +123,10 @@
             <li>
                 <p>Remove dough from refrigerator, unwrap, and dust lightly with flour. Roll out into a 9x18-inch
                     rectangle about 1/4 inch thick. Evenly spread <strong id="euButter2">6</strong> tablespoons softened
-                    unsalted butter onto the middle third of the dough. Fold one unbuttered third over the buttered third and press lightly; spread
-                    remaining <strong id="euButter3">6</strong> tablespoons of unsalted button on top of that third. Fold remaining third over the first
+                    unsalted butter onto the middle third of the dough. Fold one unbuttered third over the buttered
+                    third and press lightly; spread
+                    remaining <strong id="euButter3">6</strong> tablespoons of unsalted button on top of that third.
+                    Fold remaining third over the first
                     (buttered) third. Transfer dough onto a sheet pan, cover lightly with plastic wrap and a kitchen
                     towel, and refrigerate 20 to 30 more minutes for butter to become firm. Sprinkle dough lightly
                     with flour as you work if it becomes sticky.</p>
@@ -146,9 +158,9 @@
 
 <div id="aside">
     <nav class="side-nav">
-        <a href="index.html" class="side-nav-button">Home</a>
+        <a href="../index.html" class="side-nav-button">Home</a>
         <a href="recept.html" class="side-nav-button active">Recept</a>
-        <a href="kontact.html" class="side-nav-button">Kontakt</a>
+        <a href="kontakt.html" class="side-nav-button">Kontakt</a>
         <a href="about.html" class="side-nav-button">Om Oss</a>
     </nav>
 </div>
@@ -166,6 +178,6 @@
         </strong>
     </div>
 </footer>
-<script src="receptScript.js"></script>
+<script src="../script/receptScript.js"></script>
 </body>
 </html>

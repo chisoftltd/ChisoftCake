@@ -1,100 +1,68 @@
-
 body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    background: #E7DCE8 url("background.jpg");
+    background: #E7DCE8 url("../img/background.jpg");
 }
 
-nav.navigation {
-    position: absolute;
-    top: 20%;
-    width: 98%;
-    left: 1%;
-}
-
-h2 {
-    color: orange;
-    text-align: center;
-    font-size: 30px;
-}
-
-p {
-    font-family: "Times New Roman";
-    font-size: 20px;
-    text-align: left;
+div {
+    background: #FAE5E5 url("../img/green_leaves_PNG3675.png");
+    background-size: cover;
+    border-radius: 6px;
     color: black;
+    display: block;
+    font: 14px/24px "Source Code Pro", Inconsolata, "Comic Sans MS", Terminal, "Lucida Console", Courier;
+    padding: 24px 15px;
+    text-align: center;
 }
 
-figure.img {
-    float: inherit;
-    border: 1px dotted black;
-    margin: 5px 0px 0px 0px;
-    width: 100%;
-    height: auto;
-    opacity: 10;
-    position: relative;
-}
-
-ul {
-    list-style-type: none;
+div.du{
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    background-color: #ffa5ff;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+    text-align: left;
+    background: transparent;
+
 }
 
-li {
-    float: left;
-    border-right: 1px solid #bbb;
+#section {
+    float: right;
+    width: 80%;
+    padding:10px;
+    margin: 0 1.5% 10px 1%;
 }
 
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #111;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-.rating {
-    unicode-bidi: bidi-override;
-    direction: ltr;
-}
-.rating > span {
-    display: inline-block;
-    position: relative;
-    width: 1.1em;
-}
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-    content: "\2605";
-    position: inherit;
+footer {
+    clear: both;
+    margin: 0 1.5% 24px 1.5%;
 }
 
 nav {
     display: block;
 }
 
+p {
+    font-family:"Comic Sans MS";
+    font-size: 16px;
+    text-align: left;
+    color: black;
+}
+
+header {
+    margin: 0% 1.5% 15px 1.5%;
+}
+
 .side-nav {
-    width: 155px;
+    width: 185px;
     margin: 5px auto;
     padding: 0px;
-    background: #FAE5E5 url("green_leaves_PNG3675.png");
+    background: #FAE5E5 url("../img/green_leaves_PNG3675.png");
     border-radius: 5px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.5);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px rgba(255, 255, 255, 0.5);
     float: left;
     position: absolute;
-    top: 32%;
+    top: 28%;
     left: 1.5%;
 }
 
@@ -178,39 +146,108 @@ nav {
     margin-bottom: 0;
 }
 
-div {
-    background: #FAE5E5 url("green_leaves_PNG3675.png");
-    background-size: cover;
-    border-radius: 6px;
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffa5ff;
+}
+
+ul.u {
     color: black;
-    display: block;
-    font: 14px/24px "Source Code Pro", Inconsolata, "Times New Roman", Terminal, "Times New Roman", Courier;
-    padding: 24px 15px;
-    text-align: center;
+    background-color:transparent;
 }
-
-header {
-    margin: 1% 1% 0px 1%;
+.u li{
+    float:inherit;
+    list-style-type:circle;
 }
-
-aside,
-section,
-footer {
-    margin: 0 1.5% 24px 1.5%;
-}
-
-section {
-    float: right;
-    width: 41%;
-}
-
-aside {
+li {
     float: left;
-    width: 110px;
-    left: 3%;
+    border-right: 1px solid #bbb;
 }
 
-footer {
-    clear: both;
-    margin-bottom: 0;
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+nav.navigation {
+    position: absolute;
+    top: 18%;
+    width: 97%;
+    left: 1.5%;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+
+.range-slider {
+    width:300px;
+    height:20px;
+    margin:0 auto 1em;
+    position:relative;
+    float: left;
+    cursor:e-resize;
+}
+.range-slider:before {
+    content:"";
+    display:block;
+    position:absolute;
+    top:13px;
+    left:0;
+    width:100%;
+    height:2px;
+    background-color:black;
+    margin: 0% 1% 10px 1%;
+}
+.range-slider span {
+    display:block;
+    height:inherit;
+    position:relative;
+    z-index:2;
+    background-color:red;
+    cursor:inherit;
+}
+
+/* Test result */
+.test-result {
+    position:absolute;
+    top:90%;
+    right:55%;
+    line-height:1;
+}
+
+
+.ratingForm {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.stars {
+    display: none;
+}
+input[type=radio] + label {
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(../img/star_grey.png) left center no-repeat;
+}
+.ratingForm img {
+    width: 30px;
+    height: 30px;
+}
+.ratingForm span {
+    color: pink;
+    margin-left: 10px;
 }
